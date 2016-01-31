@@ -10,7 +10,6 @@ The uber-jar actually has the init.d management script embedded into the front o
             <li>Imports the spring-boot "spring-boot-starter-parent" parent pom.</li>
             <li>Imports the "spring-boot-starter-web" dependency to make the spring web-libraries available.</li>
             <li>Imports the "spring-boot-maven-plugin" build plugin to help us test our application through maven and to build our final executable JAR with the embedded init.d service management script.</li>
-            <li>
         </ul>
     </li>
     <li>Creates an Application.java class annotated with @SpringBootApplication containing the main() method we need to start our application.  This annotation implicitly provides the following set of annotations:
