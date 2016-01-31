@@ -15,9 +15,13 @@ The uber-jar actually has the init.d management script embedded into the front o
     </li>
     <li>Creates an Application.java class annotated with @SpringBootApplication containing the main() method we need to start our application.  This annotation implicitly provides the following set of annotations:
         <ul>
-            <li>```java @Configuration```</li>
-            <li>```java @EnableAutoConfiguration```</li>
-            <li>```java @ComponentScan```</li>
+            <li>
+                ```java
+                @Configuration
+                @EnableAutoConfiguration
+                @ComponentScan
+                ```
+            </li>
         </ul>
     </li>
     <li>This will also implicitly have the application look for an "application.properties" file on the class-path (or other places if we do some extra work).  So we have added such a file to the [src/main/resources] directory.  We have used it to set up the server port, the management port, and a single property we will use in our controller just as an example of how to pass a message.
