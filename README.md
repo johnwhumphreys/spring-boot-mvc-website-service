@@ -1,9 +1,9 @@
 # spring-boot-mvc-website-service
 This is an example of how to use Spring Boot Actuator to create a spring-mvc website that runs as a linux service out of an uber-jar.
 
-The uber-jar actually has the init.d management script embedded into the front of it which means you don't need anything to install your service besides the JAR itself!  No web-server or web configuration is required unless you desire to make things configurable per environment with external properties files.
+The uber-jar actually has the init.d management script embedded into the front of it which means you don't need anything to install your service besides the JAR itself!  No web-server or external configuration is required at all unless you desire to make things configurable per environment with external properties files.
 
-This example does the following:
+<b style="color: #336699;">This example does the following:</b>
 <ul>
     <li>Sets up the Maven POM file:
         <ul>
@@ -15,9 +15,9 @@ This example does the following:
     </li>
     <li>Creates an Application.java class annotated with @SpringBootApplication containing the main() method we need to start our application.  This annotation implicitly provides the following set of annotations:
         <ul>
-            <li>@Configuration</li>
-            <li>@EnableAutoConfiguration</li>
-            <li>@ComponentScan</li>
+            <li style="color: #993333;">@Configuration</li>
+            <li style="color: #993333;">@EnableAutoConfiguration</li>
+            <li style="color: #993333;">@ComponentScan</li>
         </ul>
     </li>
     <li>This will also implicitly have the application look for an "application.properties" file on the class-path (or other places if we do some extra work).  So we have added such a file to the [src/main/resources] directory.  We have used it to set up the server port, the management port, and a single property we will use in our controller just as an example of how to pass a message.
