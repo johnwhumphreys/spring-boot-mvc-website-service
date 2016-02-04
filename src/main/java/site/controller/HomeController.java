@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 
 @Controller
+@RequestMapping("/")
 public class HomeController {
 
     //Read the value from our application.properties file into this
@@ -22,14 +23,13 @@ public class HomeController {
     //Serve up a basic home page - could be the basis for a single-page
     //application in a framework like AngularJS, or you can just use
     //multiple pages as you wish.
-    @RequestMapping("/")
     public String index() {
-        return "index.html";
+        return "index";
     }
 
     //AJAX end-point for retrieving a custom message we will use
     //in our home-page as an example.
-    @RequestMapping("/message")
+    @RequestMapping("message")
     @ResponseBody
     public String getMessage() {
         return message;
