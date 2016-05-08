@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * Created by John on 1/30/2016.
+ * Created by John Humphreys on 1/30/2016.
  * This is a basic site.controller designed to just serve up the main
  * demonstration web-page and show that SpringMVC is working.  It also
- * has one AJAX endpoint for serving a message to that page.
+ * has one AJAX endpoint for serving a config-driven message to that page.
  */
 
 @Controller

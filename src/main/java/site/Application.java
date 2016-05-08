@@ -9,6 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * runs our website.
  */
 
+//Will automatically be used as entry-point for the uber-jar/war when we start
+//it up.  Also, will auto-detect the application.properties file and use it as
+//spring boot applications look for an available file with that name by default.
 @SpringBootApplication
 public class Application {
     public static void main(String[] args) {

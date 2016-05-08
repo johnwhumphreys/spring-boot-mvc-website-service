@@ -10,6 +10,10 @@
   <name>spring-boot-website-initd-service Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
+  <!-- Spring-boot parent POM.  Provides a base for spring-boot projects and
+       automatically selects the versions of all spring-dependencies you will
+       use in the project.  So, for all other dependencies on spring, leave
+       out the version and this will automatically fill it in for you. -->
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -21,14 +25,24 @@
   </properties>
 
   <dependencies>
+
+    <!-- Spring-boot extension dependency for using spring-MVC. -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+
+    <!-- Spring-boot extension dependency for using the "actuator" production
+         services which include the management endpoint and its significant
+         monitoring facilities. -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
+
+    <!-- Spring boot dependency to add RESTFUL end-points.  This will make the
+         actuator base-URL browse-able/list-able so you can see all the available
+         services it provides by hitting the base URL. -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-hateoas</artifactId>
@@ -38,6 +52,9 @@
   <build>
     <finalName>spring-boot-website-initd-service</finalName>
     <plugins>
+
+      <!-- Use spring boot plugin to build uber-jar and to provide maven
+           goals for running the sprint boot app (spring-boot:run). -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
@@ -52,6 +69,14 @@
         </configuration>
       </plugin>
 
+      <!-- Exclude the properties file from the JAR we build as we cannot
+           re-configure the application if this file is embedded in the JAR
+           and therefore unchangeable.  Assuming we deploy this on a server
+           using the "executable=true" above to embed an init.d script, when
+           the uber-JAR runs, it will automatically look for a file right
+           next to it called "JAR_NAME.conf" (same name as the JAR with a
+           different extension).  That file can specify the location of the
+           properties file you are using instead, among other things. -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
