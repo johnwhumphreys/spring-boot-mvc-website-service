@@ -1,4 +1,4 @@
-# spring-boot-mvc-website-service
+# spring-boot-mvc-website-service (A Project)
 This is an example of how to use Spring Boot Actuator to create a spring-mvc website that runs as a linux service out of an uber-jar.
 
 The uber-jar actually has the init.d management script embedded into the front of it which means you don't need anything to install your service besides the JAR itself!  No web-server or external configuration is required at all unless you desire to make things configurable per environment with external properties files.
